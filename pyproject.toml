@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "decentnet"
+version = "0.2.0"
+description = "Decentralized peer-resolution and direct-connect framework"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [{ name = "decentnet contributors" }]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: POSIX",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Communications",
+    "Topic :: Internet",
+    "Topic :: System :: Networking",
+]
+keywords = ["p2p", "dht", "nat-traversal", "ice", "stun", "mesh", "kademlia"]
+dependencies = [
+    "cryptography>=41.0",
+]
+
+[project.optional-dependencies]
+mobile = ["kivy>=2.3"]
+test = ["pytest>=7.0", "hypothesis>=6.0"]
+dev = ["pytest>=7.0", "hypothesis>=6.0", "ruff>=0.5"]
+
+[project.scripts]
+decentnet = "decentnet.cli.main:main"
+
+[project.urls]
+Documentation = "https://example.org/decentnet/docs"
+Repository = "https://example.org/decentnet/repo"
